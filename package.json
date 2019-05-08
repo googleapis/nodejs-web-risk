@@ -39,6 +39,7 @@
     "through2": "^2.0.3"
   },
   "scripts": {
+    "fix": "eslint . --fix",
     "lint": "eslint .",
     "smoke-test": "mocha smoke-test/*.js --timeout 5000",
     "test": "mocha test/*.js"
