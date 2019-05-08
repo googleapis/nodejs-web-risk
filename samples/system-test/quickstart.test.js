@@ -28,7 +28,7 @@ const url = 'http://testsafebrowsing.appspot.com/s/malware.html';
 
 describe('Quickstart', () => {
   it('should run quickstart', async () => {
-    const stdout = execSync(`node quickstart.js ${url}`, {cwd});
+    const stdout = execSync(`node ./samples/quickstart.js ${url}`, {cwd});
     assert.include(stdout, 'MALWARE');
   });
 });
