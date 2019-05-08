@@ -25,11 +25,14 @@ async function quickstart(uri) {
   const {WebRiskServiceV1Beta1Client} = require('@google-cloud/web-risk');
   const client = new WebRiskServiceV1Beta1Client();
 
+  // Create an API request to check for malware, social engineering,
+  // and unwanted software.
   const request = {
     uri: uri,
     threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE'],
   };
 
+  // call the WebRisk searchUris API.
   const {threat} = (await client.searchUris(request))[0];
   if (threat) {
     console.info(threat);
