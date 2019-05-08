@@ -1,7 +1,7 @@
 {
   "repository": "googleapis/nodejs-web-risk",
-  "name": "@google-cloud/web-risk",
-  "version": "1.0.0",
+  "name": "webrisk",
+  "version": "0.1.0",
   "author": "Google LLC",
   "description": "Web Risk API client for Node.js",
   "main": "src/index.js",
@@ -29,6 +29,7 @@
     "lodash.merge": "^4.6.0"
   },
   "devDependencies": {
+    "c8": "^4.1.4",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
@@ -41,8 +42,9 @@
   "scripts": {
     "fix": "eslint . --fix",
     "lint": "eslint .",
-    "smoke-test": "mocha smoke-test/*.js --timeout 5000",
-    "test": "mocha test/*.js"
+    "docs-test": "echo 'add docs test'",
+    "test": "c8 mocha test/*.js",
+    "samples-test": "mocha samples/system-test/*.js"
   },
   "license": "Apache-2.0",
   "engines": {
