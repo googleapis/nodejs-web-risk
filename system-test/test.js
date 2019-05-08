@@ -15,18 +15,17 @@
 
 'use strict';
 
-const path = require('path');
 const {assert} = require('chai');
-const cp = require('child_process');
 
-const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
-
-const cwd = path.join(__dirname, '..');
-const url = 'http://testsafebrowsing.appspot.com/s/malware.html';
-
-describe('Quickstart', () => {
-  it('should run quickstart', async () => {
-    const stdout = execSync(`node quickstart.js ${url}`, {cwd});
-    assert.include(stdout, 'MALWARE');
+describe('WebRiskSmokeTest', () => {
+  it('searches threat database for URI', async () => {
+    const {WebRiskServiceV1Beta1Client} = require('../');
+    const client = new WebRiskServiceV1Beta1Client();
+    const request = {
+      uri: 'http://testsafebrowsing.appspot.com/s/malware.html',
+      threatTypes: ['MALWARE'],
+    };
+    const {threat} = (await client.searchUris(request))[0];
+    assert.include(threat.threatTypes, 'MALWARE');
   });
 });
