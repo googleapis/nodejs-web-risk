@@ -1,6 +1,6 @@
 {
   "repository": "googleapis/nodejs-web-risk",
-  "name": "webrisk",
+  "name": "@google-cloud/web-risk",
   "version": "0.1.0",
   "author": "Google LLC",
   "description": "Web Risk API client for Node.js",
