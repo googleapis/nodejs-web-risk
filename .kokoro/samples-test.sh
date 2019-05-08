@@ -31,14 +31,14 @@ if [ -f .kokoro/pre-samples-test.sh ]; then
     set -x
 fi
 
-if [ -f samples/package.json ]; then
-    npm install
+#if [ -f samples/package.json ]; then
+#    npm install
 
     # Install and link samples
-    cd samples/
-    npm link ../
-    npm install
-    cd ..
+#    cd samples/
+#    npm link ../
+#    npm install
+#    cd ..
 
-    npm run samples-test
-fi
+#    npm run samples-test
+#fi
