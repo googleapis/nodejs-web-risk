@@ -9,5 +9,6 @@ system-test/secrets.js
 system-test/*key.json
 *.lock
 .DS_Store
+.gitignore
 __pycache__
 

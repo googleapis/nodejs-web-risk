@@ -23,11 +23,11 @@ cd $(dirname $0)/..
 npm install
 
 # Install and link samples
-#if [ -f samples/package.json ]; then
-#  cd samples/
-#  npm link ../
-#  npm install
-#  cd ..
-#fi
+if [ -f samples/package.json ]; then
+  cd samples/
+  npm link ../
+  npm install
+  cd ..
+fi
 
 npm run lint
