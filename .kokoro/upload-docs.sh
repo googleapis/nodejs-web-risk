@@ -16,11 +16,12 @@
 
 set -eo pipefail
 
-python3.6 -m pip install gcp-docuploader
-
 # build the docs (Node 8.16.0 is currently installed).
 export NPM_CONFIG_PREFIX=/home/node/.npm-global
 npm install
 npm run docs
 
 # upload docs to production bucket.
+python3.6 -m pip install gcp-docuploader
+DOC_UPLOAD_SERVICE_ACCOUNT=$(cat $KOKORO_KEYSTORE_DIR/73713_docuploader_service_account)
+python3.6 -m docuploader upload ./docs --credentials $DOC_UPLOAD_SERVICE_ACCOUNT --staging-bucket docs-staging
