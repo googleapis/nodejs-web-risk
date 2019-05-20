@@ -16,12 +16,24 @@
 
 set -eo pipefail
 
-# build the docs (Node 8.16.0 is currently installed).
+# build/test docs (Node 8.16.0 is currently installed on Python image).
 export NPM_CONFIG_PREFIX=/home/node/.npm-global
 npm install
 npm run docs-test
 
-# upload docs to production bucket.
+# create docs.metadata, based on package.json and .repo-metadata.json.
+npm i json@9.0.6 -g
+python3.6 -m docuploader create-metadata \
+  --name=$(cat .repo-metadata.json | json name) \
+  --version=$(cat package.json | json version) \
+  --language=$(cat .repo-metadata.json | json language) \
+  --distribution-name=$(cat .repo-metadata.json | json distribution_name) \
+  --product-page=$(cat .repo-metadata.json | json product_documentation) \
+  --github-repository=$(cat .repo-metadata.json | json repo) \
+  --issue-tracker=$(cat .repo-metadata.json | json issue_tracker)
+cp docs.metadata ./docs/docs.metadata
+
+# deploy the docs.
 python3.6 -m pip install gcp-docuploader
 DOC_UPLOAD_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
 python3.6 -m docuploader upload ./docs --credentials $DOC_UPLOAD_CREDENTIALS --staging-bucket docs-staging
