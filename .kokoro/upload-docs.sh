@@ -23,7 +23,8 @@ npm run docs-test
 
 # create docs.metadata, based on package.json and .repo-metadata.json.
 npm i json@9.0.6 -g
-python3.6 -m docuploader create-metadata \
+python3 -m pip install gcp-docuploader
+python3 -m docuploader create-metadata \
   --name=$(cat .repo-metadata.json | json name) \
   --version=$(cat package.json | json version) \
   --language=$(cat .repo-metadata.json | json language) \
@@ -34,6 +35,5 @@ python3.6 -m docuploader create-metadata \
 cp docs.metadata ./docs/docs.metadata
 
 # deploy the docs.
-python3.6 -m pip install gcp-docuploader
 DOC_UPLOAD_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
-python3.6 -m docuploader upload ./docs --credentials $DOC_UPLOAD_CREDENTIALS --staging-bucket docs-staging
+python3 -m docuploader upload ./docs --credentials $DOC_UPLOAD_CREDENTIALS --staging-bucket docs-staging
