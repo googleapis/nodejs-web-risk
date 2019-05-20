@@ -23,5 +23,5 @@ npm run docs-test
 
 # upload docs to production bucket.
 python3.6 -m pip install gcp-docuploader
-DOC_UPLOAD_SERVICE_ACCOUNT=$(cat $KOKORO_KEYSTORE_DIR/73713_docuploader_service_account)
-python3.6 -m docuploader upload ./docs --credentials $DOC_UPLOAD_SERVICE_ACCOUNT --staging-bucket docs-staging
+DOC_UPLOAD_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
+python3.6 -m docuploader upload ./docs --credentials $DOC_UPLOAD_CREDENTIALS --staging-bucket docs-staging
