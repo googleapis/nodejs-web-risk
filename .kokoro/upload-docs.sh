@@ -19,7 +19,7 @@ set -eo pipefail
 # build the docs (Node 8.16.0 is currently installed).
 export NPM_CONFIG_PREFIX=/home/node/.npm-global
 npm install
-npm run docs
+npm run docs-test
 
 # upload docs to production bucket.
 python3.6 -m pip install gcp-docuploader
