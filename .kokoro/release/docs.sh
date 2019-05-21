@@ -16,7 +16,7 @@
 
 set -eo pipefail
 
-# build jsdocs (Node 8.16.0 is currently installed on Python image).
+# generate documentation with Node.js.
 if [[ -z "$CREDENTIALS" ]]; then
   # if CREDENTIALS is not set, assume we're in a remote environment
   # and configure Node.js.
