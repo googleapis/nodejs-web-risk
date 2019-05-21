@@ -18,9 +18,10 @@ set -eo pipefail
 
 # build jsdocs (Node 8.16.0 is currently installed on Python image).
 if [[ -z "$CREDENTIALS" ]]; then
-  # if CREDENTIALS are explicitly set, assume we're testing locally
-  # and don't set NPM_CONFIG_PREFIX.
-  export NPM_CONFIG_PREFIX=/home/node/.npm-global
+  # if CREDENTIALS is not set, assume we're in a remote environment
+  # and configure Node.js.
+  curl -sL https://deb.nodesource.com/setup_10.x | bash -
+  apt-get install -y nodejs
 fi
 npm install
 npm run docs
