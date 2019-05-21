@@ -16,10 +16,10 @@
 
 set -eo pipefail
 
-# build/test docs (Node 8.16.0 is currently installed on Python image).
+# build jsdocs (Node 8.16.0 is currently installed on Python image).
 export NPM_CONFIG_PREFIX=/home/node/.npm-global
 npm install
-npm run docs-test
+npm run docs
 
 # create docs.metadata, based on package.json and .repo-metadata.json.
 npm i json@9.0.6 -g
