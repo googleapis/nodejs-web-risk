@@ -17,7 +17,11 @@
 set -eo pipefail
 
 # build jsdocs (Node 8.16.0 is currently installed on Python image).
-export NPM_CONFIG_PREFIX=/home/node/.npm-global
+if [[ -z "$CREDENTIALS" ]]; then
+  # if CREDENTIALS are explicitly set, assume we're testing locally
+  # and don't set NPM_CONFIG_PREFIX.
+  export NPM_CONFIG_PREFIX=/home/node/.npm-global
+fi
 npm install
 npm run docs
 
@@ -35,5 +39,10 @@ python3 -m docuploader create-metadata \
 cp docs.metadata ./docs/docs.metadata
 
 # deploy the docs.
-DOC_UPLOAD_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
-python3 -m docuploader upload ./docs --credentials $DOC_UPLOAD_CREDENTIALS --staging-bucket docs-staging
+if [[ -z "$CREDENTIALS" ]]; then
+  CREDENTIALS=${KOKORO_KEYSTORE_DIR}/73713_docuploader_service_account
+fi
+if [[ -z "$BUCKET" ]]; then
+  BUCKET=docs-staging
+fi
+python3 -m docuploader upload ./docs --credentials $CREDENTIALS --staging-bucket $BUCKET
