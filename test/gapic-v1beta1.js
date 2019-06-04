@@ -23,6 +23,24 @@ const error = new Error();
 error.code = FAKE_STATUS_CODE;
 
 describe('WebRiskServiceV1Beta1Client', () => {
+  it('has servicePath', () => {
+    const servicePath =
+      webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint =
+      webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
   describe('computeThreatListDiff', () => {
     it('invokes computeThreatListDiff without error', done => {
       const client = new webRiskModule.v1beta1.WebRiskServiceV1Beta1Client({
