@@ -4,6 +4,14 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/web-risk?activeTab=versions
 
+### [1.1.5](https://www.github.com/googleapis/nodejs-web-risk/compare/v1.1.4...v1.1.5) (2019-09-03)
+
+
+### Bug Fixes
+
+* include node version with headers ([#47](https://www.github.com/googleapis/nodejs-web-risk/issues/47)) ([60b21af](https://www.github.com/googleapis/nodejs-web-risk/commit/60b21af))
+* **docs:** stop linking reference documents to anchor ([6b4d509](https://www.github.com/googleapis/nodejs-web-risk/commit/6b4d509))
+
 ### [1.1.4](https://www.github.com/googleapis/nodejs-web-risk/compare/v1.1.3...v1.1.4) (2019-08-02)
 
 
