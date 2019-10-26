@@ -70,7 +70,9 @@ class WebRiskServiceV1Beta1Client {
     const gaxModule = !global.isBrowser && opts.fallback ? gax.fallback : gax;
 
     const servicePath =
-      opts.servicePath || opts.apiEndpoint || this.constructor.servicePath;
+      opts.servicePath ||
+      opts.apiEndpoint ||
+      this.constructor.servicePath;
 
     // Ensure that options include the service address and port.
     opts = Object.assign(
@@ -111,15 +113,11 @@ class WebRiskServiceV1Beta1Client {
     // For Node.js, pass the path to JSON proto file.
     // For browsers, pass the JSON content.
 
-    const nodejsProtoPath = path.join(
-      __dirname,
-      '..',
-      '..',
-      'protos',
-      'protos.json'
-    );
+    const nodejsProtoPath = path.join(__dirname, '..', '..', 'protos', 'protos.json');
     const protos = gaxGrpc.loadProto(
-      opts.fallback ? require('../../protos/protos.json') : nodejsProtoPath
+      opts.fallback ?
+        require("../../protos/protos.json") :
+        nodejsProtoPath
     );
 
     // Put together the default options sent with requests.
@@ -138,11 +136,9 @@ class WebRiskServiceV1Beta1Client {
     // Put together the "service stub" for
     // google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1.
     const webRiskServiceV1Beta1Stub = gaxGrpc.createStub(
-      opts.fallback
-        ? protos.lookupService(
-            'google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1'
-          )
-        : protos.google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1,
+      opts.fallback ?
+        protos.lookupService('google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1') :
+        protos.google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1,
       opts
     );
 
@@ -197,7 +193,9 @@ class WebRiskServiceV1Beta1Client {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -271,11 +269,7 @@ class WebRiskServiceV1Beta1Client {
     request = request || {};
     options = options || {};
 
-    return this._innerApiCalls.computeThreatListDiff(
-      request,
-      options,
-      callback
-    );
+    return this._innerApiCalls.computeThreatListDiff(request, options, callback);
   }
 
   /**
@@ -390,5 +384,6 @@ class WebRiskServiceV1Beta1Client {
     return this._innerApiCalls.searchHashes(request, options, callback);
   }
 }
+
 
 module.exports = WebRiskServiceV1Beta1Client;
