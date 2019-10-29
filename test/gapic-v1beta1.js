@@ -24,14 +24,12 @@ error.code = FAKE_STATUS_CODE;
 
 describe('WebRiskServiceV1Beta1Client', () => {
   it('has servicePath', () => {
-    const servicePath =
-      webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.servicePath;
+    const servicePath = webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.servicePath;
     assert(servicePath);
   });
 
   it('has apiEndpoint', () => {
-    const apiEndpoint =
-      webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.apiEndpoint;
+    const apiEndpoint = webRiskModule.v1beta1.WebRiskServiceV1Beta1Client.apiEndpoint;
     assert(apiEndpoint);
   });
 
@@ -47,9 +45,7 @@ describe('WebRiskServiceV1Beta1Client', () => {
   });
 
   it('should create a client with gRPC fallback', () => {
-    const client = new webRiskModule.v1beta1.WebRiskServiceV1Beta1Client({
-      fallback: true,
-    });
+    const client = new webRiskModule.v1beta1.WebRiskServiceV1Beta1Client({fallback: true});
     assert(client);
   });
 
@@ -234,6 +230,7 @@ describe('WebRiskServiceV1Beta1Client', () => {
       });
     });
   });
+
 });
 
 function mockSimpleGrpcMethod(expectedRequest, response, error) {
