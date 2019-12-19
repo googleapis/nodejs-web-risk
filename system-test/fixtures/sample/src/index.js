@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const webrisk = require('@google-cloud/webrisk');
+const webrisk = require('@google-cloud/web-risk');
 
 function main() {
   const webRiskServiceV1Beta1Client = new webrisk.WebRiskServiceV1Beta1Client();
