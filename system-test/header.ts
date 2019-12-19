@@ -24,7 +24,9 @@ describe('header', () => {
       uri: 'http://testsafebrowsing.appspot.com/s/malware.html',
       threatTypes: ['MALWARE'],
     };
-    await client.searchUris(request as unknown as protoTypes.google.cloud.webrisk.v1beta1.SearchUrisRequest);
+    await client.searchUris(
+      (request as unknown) as protoTypes.google.cloud.webrisk.v1beta1.SearchUrisRequest
+    );
     assert.ok(
       /^gl-node\/[0-9]+\.[\w.-]+ gax\/[\w.-]+ grpc\/[\w.-]+ gapic\/[\w.-]+$/.test(
         http2spy.requests[0]['x-goog-api-client'][0]
