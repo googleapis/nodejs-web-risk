@@ -13,10 +13,10 @@
 // limitations under the License.
 
 import * as assert from 'assert';
-import {WebRiskServiceV1Beta1Client} from '../src/v1beta1';
 import * as protoTypes from '../protos/protos';
 
 const http2spy = require('http2spy');
+const {WebRiskServiceV1Beta1Client} = http2spy.require(require.resolve('../src/v1beta1'));
 describe('header', () => {
   it('populates x-goog-api-client header', async () => {
     const client = new WebRiskServiceV1Beta1Client();
