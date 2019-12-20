@@ -12,9 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as assert from 'assert';
 import * as protoTypes from '../protos/protos';
-
+const {assert} = require('chai');
 const http2spy = require('http2spy');
 const {WebRiskServiceV1Beta1Client} = http2spy.require(require.resolve('../src/v1beta1'));
 describe('header', () => {
@@ -27,10 +26,8 @@ describe('header', () => {
     await client.searchUris(
       (request as unknown) as protoTypes.google.cloud.webrisk.v1beta1.SearchUrisRequest
     );
-    console.warn(http2spy.requests[0]);
-    console.warn(http2spy.requests[0]['x-goog-api-client'][0]);
     assert.ok(
-      /^gl-node\/[0-9]+\.[\w.-]+ gax\/[\w.-]+ grpc\/[\w.-]+ gapic\/[\w.-]+$/.test(
+      /^gax\/[\w.-]+ gapic\/[\w.-]+ gl-node\/[0-9]+\.[\w.-]+ grpc\/[\w.-]+$/.test(
         http2spy.requests[0]['x-goog-api-client'][0]
       )
     );
