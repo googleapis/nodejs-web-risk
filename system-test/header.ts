@@ -27,6 +27,8 @@ describe('header', () => {
     await client.searchUris(
       (request as unknown) as protoTypes.google.cloud.webrisk.v1beta1.SearchUrisRequest
     );
+    console.warn(http2spy.requests[0]);
+    console.warn(http2spy.requests[0]['x-goog-api-client'][0]);
     assert.ok(
       /^gl-node\/[0-9]+\.[\w.-]+ gax\/[\w.-]+ grpc\/[\w.-]+ gapic\/[\w.-]+$/.test(
         http2spy.requests[0]['x-goog-api-client'][0]
