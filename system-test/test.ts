@@ -13,6 +13,7 @@
 // limitations under the License.
 
 const {assert} = require('chai');
+const {describe, it} = require('mocha');
 
 describe('WebRiskSmokeTest', () => {
   it('searches threat database for URI', async () => {

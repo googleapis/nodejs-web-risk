@@ -14,6 +14,7 @@
 
 import * as protoTypes from '../protos/protos';
 const {assert} = require('chai');
+const {describe, it} = require('mocha');
 const http2spy = require('http2spy');
 const {WebRiskServiceV1Beta1Client} = http2spy.require(
   require.resolve('../src/v1beta1')
