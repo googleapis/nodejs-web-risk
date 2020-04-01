@@ -22,7 +22,6 @@ logging.basicConfig(level=logging.DEBUG)
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-
 # run the gapic generator
 gapic = gcp.GAPICMicrogenerator()
 versions = ['v1', 'v1beta1']
