@@ -16,10 +16,10 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import * as webrisk from '@google-cloud/web-risk';
+import {WebRiskServiceV1Beta1Client} from '@google-cloud/web-risk';
 
 function main() {
-  new webrisk.v1beta1.WebRiskServiceV1Beta1Client();
+  new WebRiskServiceV1Beta1Client();
 }
 
 main();
