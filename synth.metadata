@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-web-risk.git",
-        "sha": "e8405005d5f23ae44a7163036e8d0e966363f907"
+        "sha": "bc9d7f95bc62002ae86a752d2662a17494a40529"
       }
     },
     {
