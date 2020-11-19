@@ -30,17 +30,7 @@
                           "options": {
                             "(google.api.http).get": "/v1/threatLists:computeDiff",
                             "(google.api.method_signature)": "threat_type,version_token,constraints"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1/threatLists:computeDiff"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "threat_type,version_token,constraints"
-                            }
-                          ]
+                          }
                         },
                         "SearchUris": {
                           "requestType": "SearchUrisRequest",
@@ -48,17 +38,7 @@
                           "options": {
                             "(google.api.http).get": "/v1/uris:search",
                             "(google.api.method_signature)": "uri,threat_types"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1/uris:search"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "uri,threat_types"
-                            }
-                          ]
+                          }
                         },
                         "SearchHashes": {
                           "requestType": "SearchHashesRequest",
@@ -66,17 +46,7 @@
                           "options": {
                             "(google.api.http).get": "/v1/hashes:search",
                             "(google.api.method_signature)": "hash_prefix,threat_types"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1/hashes:search"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "hash_prefix,threat_types"
-                            }
-                          ]
+                          }
                         },
                         "CreateSubmission": {
                           "requestType": "CreateSubmissionRequest",
@@ -85,18 +55,7 @@
                             "(google.api.http).post": "/v1/{parent=projects/*}/submissions",
                             "(google.api.http).body": "submission",
                             "(google.api.method_signature)": "parent,submission"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "post": "/v1/{parent=projects/*}/submissions",
-                                "body": "submission"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "parent,submission"
-                            }
-                          ]
+                          }
                         }
                       }
                     },
@@ -413,17 +372,7 @@
                           "options": {
                             "(google.api.http).get": "/v1beta1/threatLists:computeDiff",
                             "(google.api.method_signature)": "threat_type,version_token,constraints"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1beta1/threatLists:computeDiff"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "threat_type,version_token,constraints"
-                            }
-                          ]
+                          }
                         },
                         "SearchUris": {
                           "requestType": "SearchUrisRequest",
@@ -431,17 +380,7 @@
                           "options": {
                             "(google.api.http).get": "/v1beta1/uris:search",
                             "(google.api.method_signature)": "uri,threat_types"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1beta1/uris:search"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "uri,threat_types"
-                            }
-                          ]
+                          }
                         },
                         "SearchHashes": {
                           "requestType": "SearchHashesRequest",
@@ -449,17 +388,7 @@
                           "options": {
                             "(google.api.http).get": "/v1beta1/hashes:search",
                             "(google.api.method_signature)": "hash_prefix,threat_types"
-                          },
-                          "parsedOptions": [
-                            {
-                              "(google.api.http)": {
-                                "get": "/v1beta1/hashes:search"
-                              }
-                            },
-                            {
-                              "(google.api.method_signature)": "hash_prefix,threat_types"
-                            }
-                          ]
+                          }
                         }
                       }
                     },
