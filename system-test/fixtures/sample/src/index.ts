@@ -19,7 +19,9 @@
 import {WebRiskServiceV1Beta1Client} from '@google-cloud/web-risk';
 
 // check that the client class type name can be used
-function doStuffWithWebRiskServiceV1Beta1Client(client: WebRiskServiceV1Beta1Client) {
+function doStuffWithWebRiskServiceV1Beta1Client(
+  client: WebRiskServiceV1Beta1Client
+) {
   client.close();
 }
 
