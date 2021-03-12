@@ -27,8 +27,8 @@ deep-copy-regex:
   - source: /google/cloud/webrisk/.*/webrisk-.*-nodejs/protos/google/cloud/webrisk/(.*)
     dest: /protos/google/cloud/webrisk/$1
   # unit tests:
-  - source: /google/cloud/webrisk/.*/webrisk-.*-nodejs/test/(.*)
+  - source: /google/cloud/webrisk/v1/webrisk-.*-nodejs/test/(.*)
     dest: /test/$1
   # TypeScript integration tests:
-  - source: /google/cloud/webrisk/.*/webrisk-.*-nodejs/system-test/(.*)
+  - source: /google/cloud/webrisk/v1/webrisk-.*-nodejs/system-test/(.*)
     dest: /system-test/$1
