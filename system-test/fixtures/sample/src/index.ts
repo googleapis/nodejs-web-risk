@@ -16,19 +16,17 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {WebRiskServiceV1Beta1Client} from '@google-cloud/web-risk';
+import {WebRiskServiceClient} from '@google-cloud/web-risk';
 
 // check that the client class type name can be used
-function doStuffWithWebRiskServiceV1Beta1Client(
-  client: WebRiskServiceV1Beta1Client
-) {
+function doStuffWithWebRiskServiceClient(client: WebRiskServiceClient) {
   client.close();
 }
 
 function main() {
   // check that the client instance can be created
-  const webRiskServiceV1Beta1Client = new WebRiskServiceV1Beta1Client();
-  doStuffWithWebRiskServiceV1Beta1Client(webRiskServiceV1Beta1Client);
+  const webRiskServiceClient = new WebRiskServiceClient();
+  doStuffWithWebRiskServiceClient(webRiskServiceClient);
 }
 
 main();
