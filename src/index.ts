@@ -17,9 +17,12 @@
 // ** All changes to this file may be overwritten. **
 
 import * as v1beta1 from './v1beta1';
-const WebRiskServiceV1Beta1Client = v1beta1.WebRiskServiceV1Beta1Client;
-type WebRiskServiceV1Beta1Client = v1beta1.WebRiskServiceV1Beta1Client;
-export {v1beta1, WebRiskServiceV1Beta1Client};
-export default {v1beta1, WebRiskServiceV1Beta1Client};
+import * as v1 from './v1';
+
+const WebRiskServiceClient = v1.WebRiskServiceClient;
+type WebRiskServiceClient = v1.WebRiskServiceClient;
+
+export {v1beta1, v1, WebRiskServiceClient};
+export default {v1beta1, v1, WebRiskServiceClient};
 import * as protos from '../protos/protos';
 export {protos}
