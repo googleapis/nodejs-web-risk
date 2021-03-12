@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-versions = ['v1', 'v1beta1']
+versions = ['v1beta1', 'v1']
 default_version = 'v1'
 
 # Rearrange the default version to the last item in the array, to generate appropriate system-test
