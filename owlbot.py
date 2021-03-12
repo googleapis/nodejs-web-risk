@@ -22,8 +22,6 @@ logging.basicConfig(level=logging.DEBUG)
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-# run the gapic generator
-gapic = gcp.GAPICBazel()
 versions = ['v1', 'v1beta1']
 default_version = 'v1'
 
@@ -32,14 +30,10 @@ order_versions = versions.copy()
 order_versions.append(order_versions.pop(
     order_versions.index(default_version)))
 
-for version in order_versions:
-    library = gapic.node_library('webrisk', version)
-    s.copy(library, excludes=['package.json', 'README.md'])
-
 # Copy common templates
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library(
     source_location='build/src', versions=versions, default_version=default_version)
 s.copy(templates, excludes=['.nycrc'])
 
-node.postprocess_gapic_library()
+node.postprocess_gapic_library_hermetic()
