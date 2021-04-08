@@ -22,5 +22,5 @@ deep-copy-regex:
   - source: /google/cloud/webrisk/(v.*)/.*-nodejs/(.*)
     dest: /owl-bot-staging/$1/$2
 
-begin-after-commit-hash: fb91803ccef5d7c695139b22788b309e2197856b
+begin-after-commit-hash: 674a41e0de2869f44f45eb7b1a605852a5394bba
 
