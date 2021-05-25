@@ -22,4 +22,4 @@ type WebRiskServiceV1Beta1Client = v1beta1.WebRiskServiceV1Beta1Client;
 export {v1beta1, WebRiskServiceV1Beta1Client};
 export default {v1beta1, WebRiskServiceV1Beta1Client};
 import * as protos from '../protos/protos';
-export {protos}
+export {protos};
