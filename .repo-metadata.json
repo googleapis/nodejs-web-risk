@@ -3,7 +3,7 @@
   "language": "nodejs",
   "name": "web-risk",
   "release_level": "ga",
-  "client_documentation": "https://googleapis.dev/nodejs/web-risk/latest",
+  "client_documentation": "https://cloud.google.com/nodejs/docs/reference/web-risk/latest",
   "api_id": "webrisk.googleapis.com",
   "distribution_name": "@google-cloud/web-risk",
   "product_documentation": "https://cloud.google.com/web-risk/docs/",
