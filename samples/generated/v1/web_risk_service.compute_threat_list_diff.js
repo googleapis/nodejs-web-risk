@@ -12,22 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(uri, threatTypes) {
-  // [START webrisk_search_uris_sample]
+function main(threatType, constraints) {
+  // [START webrisk_compute_threat_list_diff_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The URI to be checked for matches.
+   *  Required. The threat list to update. Only a single ThreatType should be specified.
    */
-  // const uri = 'abc123'
+  // const threatType = ''
   /**
-   *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   *  The current version token of the client for the requested list (the
+   *  client version that was received from the last successful diff).
+   *  If the client does not have a version token (this is the first time calling
+   *  ComputeThreatListDiff), this may be left empty and a full database
+   *  snapshot will be returned.
    */
-  // const threatTypes = 1234
+  // const versionToken = 'Buffer.from('string')'
+  /**
+   *  Required. The constraints associated with this request.
+   */
+  // const constraints = ''
 
   // Imports the Webrisk library
   const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
@@ -35,20 +42,20 @@ function main(uri, threatTypes) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function searchUris() {
+  async function computeThreatListDiff() {
     // Construct request
     const request = {
-      uri,
-      threatTypes,
+      threatType,
+      constraints,
     };
 
     // Run request
-    const response = await webriskClient.searchUris(request);
+    const response = await webriskClient.computeThreatListDiff(request);
     console.log(response);
   }
 
-  searchUris();
-  // [END webrisk_search_uris_sample]
+  computeThreatListDiff();
+  // [END webrisk_compute_threat_list_diff_sample]
 }
 
 process.on('unhandledRejection', err => {

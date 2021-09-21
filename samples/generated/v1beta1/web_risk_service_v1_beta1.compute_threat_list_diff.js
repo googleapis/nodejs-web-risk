@@ -12,44 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, submission) {
-  // [START webrisk_create_submission_sample]
+function main(threatType, constraints) {
+  // [START webrisk_compute_threat_list_diff_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the project that is making the submission. This string is in
-   *  the format "projects/{project_number}".
+   *  The ThreatList to update.
    */
-  // const parent = 'abc123'
+  // const threatType = ''
   /**
-   *  Required. The submission that contains the content of the phishing report.
+   *  The current version token of the client for the requested list (the
+   *  client version that was received from the last successful diff).
    */
-  // const submission = ''
+  // const versionToken = 'Buffer.from('string')'
+  /**
+   *  Required. The constraints associated with this request.
+   */
+  // const constraints = ''
 
   // Imports the Webrisk library
-  const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
+  const {WebRiskServiceV1Beta1Client} =
+    require('@google-cloud/web-risk').v1beta1;
 
   // Instantiates a client
-  const webriskClient = new WebRiskServiceClient();
+  const webriskClient = new WebRiskServiceV1Beta1Client();
 
-  async function createSubmission() {
+  async function computeThreatListDiff() {
     // Construct request
     const request = {
-      parent,
-      submission,
+      threatType,
+      constraints,
     };
 
     // Run request
-    const response = await webriskClient.createSubmission(request);
+    const response = await webriskClient.computeThreatListDiff(request);
     console.log(response);
   }
 
-  createSubmission();
-  // [END webrisk_create_submission_sample]
+  computeThreatListDiff();
+  // [END webrisk_compute_threat_list_diff_sample]
 }
 
 process.on('unhandledRejection', err => {

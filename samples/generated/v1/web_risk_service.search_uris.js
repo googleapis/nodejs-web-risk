@@ -12,19 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(threatTypes) {
-  // [START webrisk_search_hashes_sample]
+function main(uri, threatTypes) {
+  // [START webrisk_search_uris_sample]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
-   *  hash. For JSON requests, this field is base64-encoded.
+   *  Required. The URI to be checked for matches.
    */
-  // const hashPrefix = 'Buffer.from('string')'
+  // const uri = 'abc123'
   /**
    *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
    */
@@ -36,19 +34,20 @@ function main(threatTypes) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function searchHashes() {
+  async function searchUris() {
     // Construct request
     const request = {
+      uri,
       threatTypes,
     };
 
     // Run request
-    const response = await webriskClient.searchHashes(request);
+    const response = await webriskClient.searchUris(request);
     console.log(response);
   }
 
-  searchHashes();
-  // [END webrisk_search_hashes_sample]
+  searchUris();
+  // [END webrisk_search_uris_sample]
 }
 
 process.on('unhandledRejection', err => {

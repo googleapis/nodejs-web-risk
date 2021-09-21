@@ -357,6 +357,10 @@ export class WebRiskServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.computeThreatListDiff(request);
+   *
+   * @example <caption>include:samples/generated/v1/web_risk_service.compute_threat_list_diff.js</caption>
+   * region_tag:webrisk_compute_threat_list_diff_sample
+   *
    */
   computeThreatListDiff(
     request?: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
@@ -444,6 +448,10 @@ export class WebRiskServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.searchUris(request);
+   *
+   * @example <caption>include:samples/generated/v1/web_risk_service.search_uris.js</caption>
+   * region_tag:webrisk_search_uris_sample
+   *
    */
   searchUris(
     request?: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
@@ -528,6 +536,10 @@ export class WebRiskServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.searchHashes(request);
+   *
+   * @example <caption>include:samples/generated/v1/web_risk_service.search_hashes.js</caption>
+   * region_tag:webrisk_search_hashes_sample
+   *
    */
   searchHashes(
     request?: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
@@ -619,6 +631,10 @@ export class WebRiskServiceClient {
    *   for more details and examples.
    * @example
    * const [response] = await client.createSubmission(request);
+   *
+   * @example <caption>include:samples/generated/v1/web_risk_service.create_submission.js</caption>
+   * region_tag:webrisk_create_submission_sample
+   *
    */
   createSubmission(
     request?: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,

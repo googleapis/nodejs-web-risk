@@ -343,6 +343,10 @@ export class WebRiskServiceV1Beta1Client {
    *   for more details and examples.
    * @example
    * const [response] = await client.computeThreatListDiff(request);
+   *
+   * @example <caption>include:samples/generated/v1beta1/web_risk_service_v1_beta1.compute_threat_list_diff.js</caption>
+   * region_tag:webrisk_compute_threat_list_diff_sample
+   *
    */
   computeThreatListDiff(
     request?: protos.google.cloud.webrisk.v1beta1.IComputeThreatListDiffRequest,
@@ -429,6 +433,10 @@ export class WebRiskServiceV1Beta1Client {
    *   for more details and examples.
    * @example
    * const [response] = await client.searchUris(request);
+   *
+   * @example <caption>include:samples/generated/v1beta1/web_risk_service_v1_beta1.search_uris.js</caption>
+   * region_tag:webrisk_search_uris_sample
+   *
    */
   searchUris(
     request?: protos.google.cloud.webrisk.v1beta1.ISearchUrisRequest,
@@ -519,6 +527,10 @@ export class WebRiskServiceV1Beta1Client {
    *   for more details and examples.
    * @example
    * const [response] = await client.searchHashes(request);
+   *
+   * @example <caption>include:samples/generated/v1beta1/web_risk_service_v1_beta1.search_hashes.js</caption>
+   * region_tag:webrisk_search_hashes_sample
+   *
    */
   searchHashes(
     request?: protos.google.cloud.webrisk.v1beta1.ISearchHashesRequest,
