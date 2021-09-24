@@ -12,48 +12,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(threatType, constraints) {
-  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
+function main(parent, submission) {
+  // [START webrisk_v1_generated_WebRiskService_CreateSubmission_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The ThreatList to update.
+   *  Required. The name of the project that is making the submission. This string is in
+   *  the format "projects/{project_number}".
    */
-  // const threatType = ''
+  // const parent = 'abc123'
   /**
-   *  The current version token of the client for the requested list (the
-   *  client version that was received from the last successful diff).
+   *  Required. The submission that contains the content of the phishing report.
    */
-  // const versionToken = 'Buffer.from('string')'
-  /**
-   *  Required. The constraints associated with this request.
-   */
-  // const constraints = ''
+  // const submission = ''
 
   // Imports the Webrisk library
-  const {WebRiskServiceV1Beta1Client} = require('@google-cloud/web-risk').v1beta1;
+  const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
 
   // Instantiates a client
-  const webriskClient = new WebRiskServiceV1Beta1Client();
+  const webriskClient = new WebRiskServiceClient();
 
-  async function computeThreatListDiff() {
+  async function createSubmission() {
     // Construct request
     const request = {
-      threatType,
-      constraints,
+      parent,
+      submission,
     };
 
     // Run request
-    const response = await webriskClient.computeThreatListDiff(request);
+    const response = await webriskClient.createSubmission(request);
     console.log(response);
   }
 
-  computeThreatListDiff();
-  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
+  createSubmission();
+  // [END webrisk_v1_generated_WebRiskService_CreateSubmission_async]
 }
 
 process.on('unhandledRejection', err => {

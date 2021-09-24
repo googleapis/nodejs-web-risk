@@ -12,23 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(parent, submission) {
-  // [START webrisk_v1_generated_WebRiskService_CreateSubmission_async]
+function main(uri, threatTypes) {
+  // [START webrisk_v1_generated_WebRiskService_SearchUris_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the project that is making the submission. This string is in
-   *  the format "projects/{project_number}".
+   *  Required. The URI to be checked for matches.
    */
-  // const parent = 'abc123'
+  // const uri = 'abc123'
   /**
-   *  Required. The submission that contains the content of the phishing report.
+   *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
    */
-  // const submission = ''
+  // const threatTypes = 1234
 
   // Imports the Webrisk library
   const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
@@ -36,20 +34,20 @@ function main(parent, submission) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function createSubmission() {
+  async function searchUris() {
     // Construct request
     const request = {
-      parent,
-      submission,
+      uri,
+      threatTypes,
     };
 
     // Run request
-    const response = await webriskClient.createSubmission(request);
+    const response = await webriskClient.searchUris(request);
     console.log(response);
   }
 
-  createSubmission();
-  // [END webrisk_v1_generated_WebRiskService_CreateSubmission_async]
+  searchUris();
+  // [END webrisk_v1_generated_WebRiskService_SearchUris_async]
 }
 
 process.on('unhandledRejection', err => {

@@ -12,43 +12,48 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(uri, threatTypes) {
-  // [START webrisk_v1_generated_WebRiskService_SearchUris_async]
+function main(threatType, constraints) {
+  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The URI to be checked for matches.
+   *  The ThreatList to update.
    */
-  // const uri = 'abc123'
+  // const threatType = ''
   /**
-   *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   *  The current version token of the client for the requested list (the
+   *  client version that was received from the last successful diff).
    */
-  // const threatTypes = 1234
+  // const versionToken = 'Buffer.from('string')'
+  /**
+   *  Required. The constraints associated with this request.
+   */
+  // const constraints = ''
 
   // Imports the Webrisk library
-  const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
+  const {WebRiskServiceV1Beta1Client} =
+    require('@google-cloud/web-risk').v1beta1;
 
   // Instantiates a client
-  const webriskClient = new WebRiskServiceClient();
+  const webriskClient = new WebRiskServiceV1Beta1Client();
 
-  async function searchUris() {
+  async function computeThreatListDiff() {
     // Construct request
     const request = {
-      uri,
-      threatTypes,
+      threatType,
+      constraints,
     };
 
     // Run request
-    const response = await webriskClient.searchUris(request);
+    const response = await webriskClient.computeThreatListDiff(request);
     console.log(response);
   }
 
-  searchUris();
-  // [END webrisk_v1_generated_WebRiskService_SearchUris_async]
+  computeThreatListDiff();
+  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
 }
 
 process.on('unhandledRejection', err => {

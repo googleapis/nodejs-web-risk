@@ -12,43 +12,42 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(uri, threatTypes) {
-  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchUris_async]
+function main(threatTypes) {
+  // [START webrisk_v1_generated_WebRiskService_SearchHashes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The URI to be checked for matches.
+   *  A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
+   *  hash. For JSON requests, this field is base64-encoded.
    */
-  // const uri = 'abc123'
+  // const hashPrefix = 'Buffer.from('string')'
   /**
-   *  Required. The ThreatLists to search in.
+   *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
    */
   // const threatTypes = 1234
 
   // Imports the Webrisk library
-  const {WebRiskServiceV1Beta1Client} = require('@google-cloud/web-risk').v1beta1;
+  const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
 
   // Instantiates a client
-  const webriskClient = new WebRiskServiceV1Beta1Client();
+  const webriskClient = new WebRiskServiceClient();
 
-  async function searchUris() {
+  async function searchHashes() {
     // Construct request
     const request = {
-      uri,
       threatTypes,
     };
 
     // Run request
-    const response = await webriskClient.searchUris(request);
+    const response = await webriskClient.searchHashes(request);
     console.log(response);
   }
 
-  searchUris();
-  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchUris_async]
+  searchHashes();
+  // [END webrisk_v1_generated_WebRiskService_SearchHashes_async]
 }
 
 process.on('unhandledRejection', err => {
