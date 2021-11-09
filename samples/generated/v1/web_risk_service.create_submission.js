@@ -12,30 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(threatType, constraints) {
-  // [START webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_async]
+function main(parent, submission) {
+  // [START webrisk_v1_generated_WebRiskService_CreateSubmission_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The threat list to update. Only a single ThreatType should be specified.
+   *  Required. The name of the project that is making the submission. This string is in
+   *  the format "projects/{project_number}".
    */
-  // const threatType = {}
+  // const parent = 'abc123'
   /**
-   *  The current version token of the client for the requested list (the
-   *  client version that was received from the last successful diff).
-   *  If the client does not have a version token (this is the first time calling
-   *  ComputeThreatListDiff), this may be left empty and a full database
-   *  snapshot will be returned.
+   *  Required. The submission that contains the content of the phishing report.
    */
-  // const versionToken = 'Buffer.from('string')'
-  /**
-   *  Required. The constraints associated with this request.
-   */
-  // const constraints = {}
+  // const submission = {}
 
   // Imports the Webrisk library
   const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
@@ -43,20 +35,20 @@ function main(threatType, constraints) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function callComputeThreatListDiff() {
+  async function callCreateSubmission() {
     // Construct request
     const request = {
-      threatType,
-      constraints,
+      parent,
+      submission,
     };
 
     // Run request
-    const response = await webriskClient.computeThreatListDiff(request);
+    const response = await webriskClient.createSubmission(request);
     console.log(response);
   }
 
-  callComputeThreatListDiff();
-  // [END webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_async]
+  callCreateSubmission();
+  // [END webrisk_v1_generated_WebRiskService_CreateSubmission_async]
 }
 
 process.on('unhandledRejection', err => {

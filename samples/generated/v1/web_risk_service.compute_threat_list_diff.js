@@ -12,22 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(uri, threatTypes) {
-  // [START webrisk_v1_generated_WebRiskService_SearchUris_async]
+function main(threatType, constraints) {
+  // [START webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The URI to be checked for matches.
+   *  Required. The threat list to update. Only a single ThreatType should be specified.
    */
-  // const uri = 'abc123'
+  // const threatType = {}
   /**
-   *  Required. The ThreatLists to search in. Multiple ThreatLists may be specified.
+   *  The current version token of the client for the requested list (the
+   *  client version that was received from the last successful diff).
+   *  If the client does not have a version token (this is the first time calling
+   *  ComputeThreatListDiff), this may be left empty and a full database
+   *  snapshot will be returned.
    */
-  // const threatTypes = 1234
+  // const versionToken = 'Buffer.from('string')'
+  /**
+   *  Required. The constraints associated with this request.
+   */
+  // const constraints = {}
 
   // Imports the Webrisk library
   const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
@@ -35,20 +42,20 @@ function main(uri, threatTypes) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function callSearchUris() {
+  async function callComputeThreatListDiff() {
     // Construct request
     const request = {
-      uri,
-      threatTypes,
+      threatType,
+      constraints,
     };
 
     // Run request
-    const response = await webriskClient.searchUris(request);
+    const response = await webriskClient.computeThreatListDiff(request);
     console.log(response);
   }
 
-  callSearchUris();
-  // [END webrisk_v1_generated_WebRiskService_SearchUris_async]
+  callComputeThreatListDiff();
+  // [END webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_async]
 }
 
 process.on('unhandledRejection', err => {

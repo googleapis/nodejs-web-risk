@@ -12,48 +12,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 'use strict';
 
-function main(threatType, constraints) {
-  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
+function main(threatTypes) {
+  // [START webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchHashes_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The ThreatList to update.
+   *  A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
+   *  hash. For JSON requests, this field is base64-encoded.
    */
-  // const threatType = {}
+  // const hashPrefix = 'Buffer.from('string')'
   /**
-   *  The current version token of the client for the requested list (the
-   *  client version that was received from the last successful diff).
+   *  Required. The ThreatLists to search in.
    */
-  // const versionToken = 'Buffer.from('string')'
-  /**
-   *  Required. The constraints associated with this request.
-   */
-  // const constraints = {}
+  // const threatTypes = 1234
 
   // Imports the Webrisk library
-  const {WebRiskServiceV1Beta1Client} = require('@google-cloud/web-risk').v1beta1;
+  const {WebRiskServiceV1Beta1Client} =
+    require('@google-cloud/web-risk').v1beta1;
 
   // Instantiates a client
   const webriskClient = new WebRiskServiceV1Beta1Client();
 
-  async function callComputeThreatListDiff() {
+  async function callSearchHashes() {
     // Construct request
     const request = {
-      threatType,
-      constraints,
+      threatTypes,
     };
 
     // Run request
-    const response = await webriskClient.computeThreatListDiff(request);
+    const response = await webriskClient.searchHashes(request);
     console.log(response);
   }
 
-  callComputeThreatListDiff();
-  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
+  callSearchHashes();
+  // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_SearchHashes_async]
 }
 
 process.on('unhandledRejection', err => {
