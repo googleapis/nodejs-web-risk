@@ -12,5 +12,5 @@
   "issue_tracker": "",
   "repo": "googleapis/nodejs-web-risk",
   "api_shortname": "web-risk",
-  "library_type": ""
+  "library_type": "GAPIC_AUTO"
 }
