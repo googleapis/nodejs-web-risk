@@ -9,7 +9,7 @@
   "product_documentation": "https://cloud.google.com/web-risk/docs/",
   "requires_billing": true,
   "default_version": "v1",
-  "issue_tracker": "",
+  "issue_tracker": "https://github.com/googleapis/nodejs-web-risk/issues",
   "repo": "googleapis/nodejs-web-risk",
   "api_shortname": "webrisk",
   "library_type": "GAPIC_AUTO"
