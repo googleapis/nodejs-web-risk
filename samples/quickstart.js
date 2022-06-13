@@ -14,6 +14,7 @@
 
 'use strict';
 
+// TODO: revert threat types to strings once https://github.com/googleapis/gax-nodejs/issues/1205 is fixed
 // [START web_risk_quickstart]
 /**
  * Check a URI against the WebRisk API.
